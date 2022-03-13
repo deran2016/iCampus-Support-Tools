@@ -1,0 +1,136 @@
+body.primary-nav-expanded .ic-app-header {
+    width: 60px !important;
+}
+.ic-DashboardCard__header_hero {
+    height: 80px !important;
+}
+.ic-DashboardCard {
+    margin: 0 8px 8px 0 !important;
+    width: 180px !important;
+}
+.lecture {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.assignment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.xnsl-components-container {
+    max-width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.xn-component-item-container.learn.open {
+    border-left: 5px solid #2083c5;
+}
+.xn-component-item-container {
+    position: relative;
+}
+#xn-course-learn .xncl-section-container .xn-component-item {
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding-left: 10px;
+}
+.xn-component-item {
+    width: 100%;
+    padding: 8px 0;
+    background-color: #fff;
+    cursor: pointer;
+}
+@media only screen and (max-width: 812px) {
+    #xn-course-learn .xn-component-item .xnci-description-component-type-icon-container {
+        margin: 0;
+        width: 20px;
+        height: 20px;
+    }
+}
+.xn-component-item .xnci-description-component-type-icon-container {
+    width: 30px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+@media only screen and (max-width: 812px) {
+    #xn-course-learn .xn-component-item .xnci-description {
+        width: calc(100% - 20px);
+    }
+}
+.xn-component-item .xnci-description {
+    padding: 0 10px 0 5px;
+    display: inline-block;
+    width: calc(100% - 30px);
+    vertical-align: top;
+}
+.xnci-description.movie .xnci-component-description-row.first .xnci-component-description-row-left {
+    width: calc(100% - 200px);
+}
+.xn-component-item .xnci-description .xnci-component-description-row-left {
+    display: inline-block;
+    vertical-align: top;
+}
+.xnci-component-title {
+    width: 100%;
+    height: 21px;
+    font-size: 14px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+.xn-component-item .xnci-description .xnci-component-description-row-right {
+    float: right;
+}
+.xnci-description.movie .xnci-component-description-row.second {
+    margin-top: 2px;
+    padding-top: 2px;
+}
+.xn-component-item .xnci-description .xnci-component-description-row.second {
+    font-size: 11px;
+    color: #a1a1a1;
+}
+.xn-component-item .xnci-description .xnci-component-description-row-left {
+    display: inline-block;
+    vertical-align: top;
+}
+.xn-component-item .xnci-description .xnci-component-description-row.second {
+    font-size: 11px;
+    color: #a1a1a1;
+}
+.xn-component-item .xnci-description .xnci-component-description-row .xn-common-separator {
+    font-size: 5px;
+    color: #acacac;
+    margin: 1px 4px 0;
+    display: inline-block;
+    height: 11px;
+    overflow-y: hidden;
+    vertical-align: top;
+}
+.xn-component-item .xnci-description .xnci-component-description-row-right .xnci-date-container {
+    margin-left: 5px;
+}
+.xn-component-item .xnci-description .xnci-component-description-row-right .xnci-info.top-key {
+    margin-right: 3px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.xnci-attendance-status.none {
+    border: 1px solid #c7c7c7;
+    color: #515151;
+}
+.xnci-attendance-status {
+    display: block;
+    width: 170px;
+    max-width: 200px;
+    height: 22px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 12px;
+    padding-top: 3px;
+}

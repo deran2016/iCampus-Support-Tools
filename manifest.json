@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  
+  "name": "iCampus Support Tools",
+  "description": "iCampus Support Tools",
+  "version": "0.2.0",
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://canvas.skku.edu/*"
+      ],
+      "js": [
+        "utils.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://canvas.skku.edu/"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "logo.jpg"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts; script-src 'self' 'https://canvas.skku.edu/'; object-src 'self'"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "declarativeContent",
+    "storage",
+    "scripting",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "*://canvas.skku.edu/*"
+  ]
+}
