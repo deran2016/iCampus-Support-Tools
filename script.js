@@ -76,6 +76,7 @@ async function getLearnStatus(){
                 if (!index) addTitle('과제', '.assignment');
                 addLecture(lecture, '.assignment');
             });
+            closeLoading();
         }
         else document.querySelector(".assignment").innerText = "데이터를 불러오는데 실패했습니다. 새로고침 후 재실행 해주세요";
     });
@@ -113,7 +114,7 @@ function sort(todo){
 
 function addLecture(lecture, type) {
     const div = document.querySelector(type);
-    div.innerHTML += `<a style="color: black; max-width: 800px" href="${lecture.url}"><div class="xnsl-components-container"><div class="xn-component-item-container learn open attendance"><div class="xn-component-item learn default movie open" tabindex="0" role="button"><div class="xnci-description-component-type-icon-container learn unpublished start movie"><div class="xnci-description-component-type-icon learn unpublished start movie"></div></div><div class="xnci-description movie"><div class="xnci-component-description-row first"><div class="xnci-component-description-row-left"><span class="xnci-component-title">${lecture.title}</span></div><div class="xnci-component-description-row-right"><span class="xnci-attendance-status none">남은 시간: ${msToTime(lecture.remainingTime_ms)}</span></div></div><div class="xnci-component-description-row second"><div class="xnci-component-description-row-left"><span><span class="xnci-description-component-type-container  learn unpublished start"><span class="xnci-description-component-type learn unpublished start">${lecture.course}</span></span></span></div><div class="xnci-component-description-row-right"><span><span class="xnci-date-container"><span class="xnci-info top-key"><!-- react-text: 124 -->마감일<!-- /react-text --><!-- react-text: 125 -->:<!-- /react-text --></span><span class="xnci-info top-value">${dateToLocaleString(lecture.due)}</span></span></span></div></div></div></div></div></div></a>`;
+    div.innerHTML += `<a class="lecture-btn" href="${lecture.url}"><div class="xnsl-components-container"><div class="xn-component-item-container learn open attendance"><div class="xn-component-item learn default movie open" tabindex="0" role="button"><div class="xnci-description-component-type-icon-container learn unpublished start movie"><div class="xnci-description-component-type-icon learn unpublished start movie"></div></div><div class="xnci-description movie"><div class="xnci-component-description-row first"><div class="xnci-component-description-row-left"><span class="xnci-component-title">${lecture.title}</span></div><div class="xnci-component-description-row-right"><span class="xnci-attendance-status none">남은 시간: ${msToTime(lecture.remainingTime_ms)}</span></div></div><div class="xnci-component-description-row second"><div class="xnci-component-description-row-left"><span><span class="xnci-description-component-type-container  learn unpublished start"><span class="xnci-description-component-type learn unpublished start">${lecture.course}</span></span></span></div><div class="xnci-component-description-row-right"><span><span class="xnci-date-container"><span class="xnci-info top-key"><!-- react-text: 124 -->마감일<!-- /react-text --><!-- react-text: 125 -->:<!-- /react-text --></span><span class="xnci-info top-value">${dateToLocaleString(lecture.due)}</span></span></span></div></div></div></div></div></div></a>`;
     div.addEventListener('click', () => {
         chrome.tabs.create({ url: lecture.url });
     });
@@ -125,4 +126,8 @@ function addTitle(title, type) {
     h2.style = 'font-size: 16px; border-bottom: 1px solid #C7CDD1; padding-bottom: 6px; margin: 0 0 6px; font-weight: bold;';
     h2.innerText = title;
     div.appendChild(h2);
+}
+
+function closeLoading() {
+    document.querySelector('#loading').style = 'display: none';
 }

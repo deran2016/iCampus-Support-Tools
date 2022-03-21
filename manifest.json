@@ -3,7 +3,7 @@
   
   "name": "iCampus Support Tools",
   "description": "iCampus Support Tools",
-  "version": "0.2.0",
+  "version": "0.2.1",
 
   "content_scripts": [
     {
@@ -44,12 +44,9 @@
     "sandbox": "sandbox allow-scripts; script-src 'self' 'https://canvas.skku.edu/'; object-src 'self'"
   },
   "permissions": [
-    "activeTab",
-    "tabs",
     "declarativeContent",
     "storage",
-    "scripting",
-    "webRequest"
+    "scripting"
   ],
   "host_permissions": [
     "*://canvas.skku.edu/*"
