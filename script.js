@@ -33,6 +33,11 @@ async function getToken(){
         func: getCookie,
         args: ["xn_api_token"],
     }, function (response) {
+        if (!response) {
+            closeLoading();
+            openError();
+            return;
+        }
         if (response[0].result) getLearnStatus();
         else {
             let res = request('https://canvas.skku.edu/api/v1/courses');
@@ -72,7 +77,7 @@ async function getLearnStatus(){
                 if (!index) addTitle('강의', '.lecture');
                 addLecture(lecture, '.lecture');
             });
-            todo.assignment.forEach((lecture) => {
+            todo.assignment.forEach((lecture, index) => {
                 if (!index) addTitle('과제', '.assignment');
                 addLecture(lecture, '.assignment');
             });
@@ -130,4 +135,8 @@ function addTitle(title, type) {
 
 function closeLoading() {
     document.querySelector('#loading').style = 'display: none';
+}
+
+function openError() {
+    document.querySelector('.error').style = 'display: block';
 }

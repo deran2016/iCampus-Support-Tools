@@ -169,3 +169,11 @@ body.primary-nav-expanded .ic-app-header {
     width: 600px;
     display: block;
 }
+
+.error {
+    display: none;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 auto;
+    text-align: center;
+}
