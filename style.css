@@ -177,3 +177,72 @@ body.primary-nav-expanded .ic-app-header {
     margin: 0 auto;
     text-align: center;
 }
+
+.fbtn {
+    margin: 0 auto;
+    color: #fff;
+    padding: 0;
+    width: 33px;
+    height: 33px;
+    display: none;
+    outline: 0;
+    border: none;
+    text-decoration: none;
+    background: #227cf1;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.fbtn:hover {
+    background: #3887ee;
+}
+
+#todoform {
+    display: none;
+}
+
+.red {
+    background: rgb(206, 80, 80);
+}
+
+input {
+    display: block;
+    margin: 3px auto;
+    width: 300px;
+    height: 45px;
+}
+
+#add-btn {
+    display: block;
+    margin: 3px auto;
+    color: white;
+    width: 300px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    background-color: #227cf1;
+    cursor: pointer;
+}
+
+#add-btn:hover {
+    background-color: #3887ee;
+}
+
+#close-form-btn {
+    display: block;
+    margin: 3px auto;
+    color: white;
+    width: 300px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(248, 74, 74);
+    cursor: pointer;
+}
+
+#close-form-btn:hover {
+    background-color: rgb(202, 96, 96);
+}

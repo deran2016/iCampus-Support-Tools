@@ -13,9 +13,19 @@
   </head>
   <body>
     <div id="loading"><div class="spinner"></div></div>
-    <div class="lecture"></div>
-    <div class="assignment"></div>
-    <div class="error">데이터를 불러오는데 실패했습니다.<br/><code>canvas.skku.edu</code> 에서 실행한 것이 맞는지 확인해주세요.</div>
+    <div id="main">
+      <div class="lecture"></div>
+      <div class="assignment"></div>
+      <div class="error">데이터를 불러오는데 실패했습니다.<br/><code>canvas.skku.edu</code> 에서 실행한 것이 맞는지 확인해주세요.</div>
+      <div id="open-form-btn" class="fbtn">+</div>
+    </div>
+    <div id="todoform">
+      <input id="todoname" type="text" placeholder="할 일 내용" />
+      <input id="todotype" type="text" placeholder="과목명" />
+      <input id="tododate" type="date" />
+      <button id="add-btn">할 일 추가</button>
+      <button id="close-form-btn">취소</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

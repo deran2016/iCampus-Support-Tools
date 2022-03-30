@@ -3,7 +3,7 @@
   
   "name": "iCampus Support Tools",
   "description": "iCampus Support Tools",
-  "version": "0.2.1",
+  "version": "0.2.4",
 
   "content_scripts": [
     {

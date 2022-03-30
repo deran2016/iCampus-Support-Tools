@@ -36,6 +36,7 @@ async function getToken(){
         if (!response) {
             closeLoading();
             openError();
+            showFbtn();
             return;
         }
         if (response[0].result) getLearnStatus();
@@ -82,6 +83,7 @@ async function getLearnStatus(){
                 addLecture(lecture, '.assignment');
             });
             closeLoading();
+            showFbtn();
         }
         else document.querySelector(".assignment").innerText = "데이터를 불러오는데 실패했습니다. 새로고침 후 재실행 해주세요";
     });
@@ -119,10 +121,7 @@ function sort(todo){
 
 function addLecture(lecture, type) {
     const div = document.querySelector(type);
-    div.innerHTML += `<a class="lecture-btn" href="${lecture.url}"><div class="xnsl-components-container"><div class="xn-component-item-container learn open attendance"><div class="xn-component-item learn default movie open" tabindex="0" role="button"><div class="xnci-description-component-type-icon-container learn unpublished start movie"><div class="xnci-description-component-type-icon learn unpublished start movie"></div></div><div class="xnci-description movie"><div class="xnci-component-description-row first"><div class="xnci-component-description-row-left"><span class="xnci-component-title">${lecture.title}</span></div><div class="xnci-component-description-row-right"><span class="xnci-attendance-status none">남은 시간: ${msToTime(lecture.remainingTime_ms)}</span></div></div><div class="xnci-component-description-row second"><div class="xnci-component-description-row-left"><span><span class="xnci-description-component-type-container  learn unpublished start"><span class="xnci-description-component-type learn unpublished start">${lecture.course}</span></span></span></div><div class="xnci-component-description-row-right"><span><span class="xnci-date-container"><span class="xnci-info top-key"><!-- react-text: 124 -->마감일<!-- /react-text --><!-- react-text: 125 -->:<!-- /react-text --></span><span class="xnci-info top-value">${dateToLocaleString(lecture.due)}</span></span></span></div></div></div></div></div></div></a>`;
-    div.addEventListener('click', () => {
-        chrome.tabs.create({ url: lecture.url });
-    });
+    div.innerHTML += `<a class="lecture-btn" href="${lecture.url}" target="_blank"><div class="xnsl-components-container"><div class="xn-component-item-container learn open attendance"><div class="xn-component-item learn default movie open" tabindex="0" role="button"><div class="xnci-description-component-type-icon-container learn unpublished start movie"><div class="xnci-description-component-type-icon learn unpublished start movie"></div></div><div class="xnci-description movie"><div class="xnci-component-description-row first"><div class="xnci-component-description-row-left"><span class="xnci-component-title">${lecture.title}</span></div><div class="xnci-component-description-row-right"><span class="xnci-attendance-status none">남은 시간: ${msToTime(lecture.remainingTime_ms)}</span></div></div><div class="xnci-component-description-row second"><div class="xnci-component-description-row-left"><span><span class="xnci-description-component-type-container  learn unpublished start"><span class="xnci-description-component-type learn unpublished start">${lecture.course}</span></span></span></div><div class="xnci-component-description-row-right"><span><span class="xnci-date-container"><span class="xnci-info top-key"><!-- react-text: 124 -->마감일<!-- /react-text --><!-- react-text: 125 -->:<!-- /react-text --></span><span class="xnci-info top-value">${dateToLocaleString(lecture.due)}</span></span></span></div></div></div></div></div></div></a>`;
 }
 
 function addTitle(title, type) {
@@ -140,3 +139,42 @@ function closeLoading() {
 function openError() {
     document.querySelector('.error').style = 'display: block';
 }
+
+function showFbtn() {
+    document.querySelector('.fbtn').style = 'display: block';
+}
+
+function openForm() {
+    document.querySelector('#todoform').style = 'display: block';
+    document.querySelector('#main').style = 'display: none';
+}
+
+function closeForm() {
+    document.querySelector('#todoform').style = 'display: none';
+    document.querySelector('#main').style = 'display: block';
+}
+
+function initForm() {
+    document.querySelector('#todoname').value = '';
+    document.querySelector('#todotype').value = '';
+    document.querySelector('#tododate').value = '';
+}
+
+document.querySelector('#open-form-btn').addEventListener('click', () => {
+    openForm();
+});
+
+document.querySelector('#close-form-btn').addEventListener('click', () => {
+    initForm();
+    closeForm();
+});
+
+document.querySelector('#add-btn').addEventListener('click', () => {
+    if (document.querySelector('#todoname').value === '' || document.querySelector('#todotype').value === '') {
+        alert('빈칸을 모두 채워주세요.');
+    } else {
+        alert('아직 구현되지 않은 기능입니다.');
+        initForm();
+        closeForm();
+    }
+});
