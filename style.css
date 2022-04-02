@@ -158,6 +158,9 @@ body.primary-nav-expanded .ic-app-header {
     padding: 5px 5px 8px 19px !important;
 }
 
+.ic-app-nav-toggle-and-crumbs {
+    min-height: 2.5rem !important;
+}
 
 body.ic-framed-lti-tool .ic-Layout-contentMain {
     padding: 0 !important;
@@ -170,6 +173,24 @@ body.ic-framed-lti-tool .ic-Layout-contentMain {
     position: absolute;
     top:0;
     left:0;
+}
+
+.broadbtn {
+    position: absolute;
+    right: 10px;
+    z-index: 20;
+    top: 10px;
+    width: 80px;
+    height: 25px;
+    border: none;
+    background-color: #227cf1;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+}
+
+.broadbtn:hover {
+    background-color: #3887ee;
 }
 
 @keyframes spinner {
