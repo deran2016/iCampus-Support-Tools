@@ -135,6 +135,34 @@ body.primary-nav-expanded .ic-app-header {
     padding-top: 3px;
 }
 
+@media (min-width: 768px) {
+    body:not(.no-headers).primary-nav-expanded .ic-Layout-wrapper {
+        margin-left: 55px !important;
+    }
+    body.course-menu-expanded:not(.ic-no-flex-layout):not(.embedded):not(.is-inside-submission-frame) .ic-Layout-columns {
+        margin-left: 135px !important; 
+    }
+}
+
+.ic-app-course-menu {
+    padding: 0px 0px 10px 15px !important;
+    width: 130px !important;
+    font-size: 14px !important;
+}
+
+.xn-unit-container {
+    padding: 0 !important;
+}
+
+.with-left-side .list-view>nav>ul>li>a {
+    padding: 5px 5px 8px 19px !important;
+}
+
+
+body.ic-framed-lti-tool .ic-Layout-contentMain {
+    padding: 0 !important;
+}
+
 #loading {
     display: block;
     width: 100%;
